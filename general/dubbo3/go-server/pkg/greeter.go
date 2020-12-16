@@ -35,6 +35,7 @@ func NewGreeterProvider() *GreeterProvider {
 
 func (g *GreeterProvider) SayHello(ctx context.Context, req *protobuf.HelloRequest) (reply *protobuf.HelloReply, err error) {
 	fmt.Printf("req: %v", req)
+	fmt.Println(ctx.Value("tri-req-id"))
 	return &protobuf.HelloReply{Message: "this is message from reply"}, nil
 }
 

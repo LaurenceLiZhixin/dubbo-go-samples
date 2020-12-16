@@ -16,10 +16,10 @@ ifeq ($(UNAME), Linux)
 endif
 
 $(PROTOC_GEN_GO):
-	go get -u github.com/apache/dubbo-go/protocol/grpc/protoc-gen-dubbo
+	go get -u github.com/apache/dubbo-go/protocol/grpc/protoc-gen-dubbo3
 
 helloworld.pb.go: helloworld.proto | $(PROTOC_GEN_GO) $(PROTOC)
-	protoc -I . helloworld.proto --dubbo_out=plugins=grpc+dubbo:.
+	protoc -I . helloworld.proto --dubbo3_out=plugins=grpc+dubbo:.
 
 .PHONY: compile
 compile: helloworld.pb.go

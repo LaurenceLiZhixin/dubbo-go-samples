@@ -53,7 +53,9 @@ func main() {
 	req := &protobuf.HelloRequest{
 		Name: "jifeng",
 	}
-	err := grpcGreeterImpl.SayHello(context.TODO(), req, reply)
+	ctx := context.Background()
+	ctx = context.WithValue(ctx,"tri-req-id","id value" )
+	err := grpcGreeterImpl.SayHello(ctx, req, reply)
 	if err != nil {
 		panic(err)
 	}
