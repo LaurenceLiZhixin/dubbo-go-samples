@@ -28,4 +28,8 @@ require (
 
 replace github.com/envoyproxy/go-control-plane => github.com/envoyproxy/go-control-plane v0.8.0
 
+replace (
+	github.com/apache/dubbo-go => ../dubbo-go
+)
+
 go 1.13
